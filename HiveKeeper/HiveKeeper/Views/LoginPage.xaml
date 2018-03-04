@@ -5,18 +5,63 @@
              Title="Login">
     <ContentPage.Content>
 
-        <StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="0" Padding="0">
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                        <Image Source="logo.png" VerticalOptions="Center" HeightRequest="64" />
+                    </ContentView>
+                </StackLayout>
+                
+                <!--<Button BorderRadius="30" HeightRequest="60" WidthRequest="60" BackgroundColor="Red" HorizontalOptions="Center" VerticalOptions="Start" />
+                <StackLayout HeightRequest="100" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20" BackgroundColor="Maroon">
+                    <Label Text="User Name" FontSize="28" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" />
+                    <Entry Text="Bio + Hashtags" TextColor="White" BackgroundColor="Maroon" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HeightRequest="50" BackgroundColor="White" Padding="5">
+                    <StackLayout Spacing="0" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="Start">
+                        <BoxView BackgroundColor="Black" WidthRequest="40" HeightRequest="40"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                        <Label FontSize="14" TextColor="Black" Text="Accent Color" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Spacing="0" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <BoxView BackgroundColor="Maroon" WidthRequest="40" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Label FontSize="14" TextColor="Black" Text="Primary Color" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontSize="14" Text="Age:" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="35" TextColor="White" BackgroundColor="Maroon" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontSize="14" Text="Interests:" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="Xamarin.Forms" TextColor="White" BackgroundColor="Maroon" /> 
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontSize="14" Text="Ask me about:" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="100"/>
+                    <Entry HorizontalOptions="FillAndExpand" Text="Xamarin, C#, .NET, Mono..." TextColor="White" BackgroundColor="Maroon" />
+                </StackLayout>-->
 
-            <Label TextColor="#770000" FontSize = "40" HorizontalTextAlignment="Center" Text="Hive Keeper" />
-            
-            <Entry x:Name="usernameEntry" Placeholder="Username" />
+                <StackLayout>
 
-            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password" />
+                    <Label TextColor="#770000" FontSize = "40" HorizontalTextAlignment="Center" Text="Hive Keeper" />
 
-            <Button Text="Login" Clicked="OnLoginButtonClicked" />
-            <Label x:Name="messageLabel" />
+                    <Entry x:Name="usernameEntry" Placeholder="Username" />
+
+                    <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password" />
+
+                    <Button Text="Login" Clicked="OnLoginButtonClicked" />
+                    <Label x:Name="messageLabel" />
+
+                </StackLayout>
+
+                
+            </StackLayout>
+
             
-            
-        </StackLayout>
+        </ScrollView>
+        
+
+        
     </ContentPage.Content>
 </ContentPage>
