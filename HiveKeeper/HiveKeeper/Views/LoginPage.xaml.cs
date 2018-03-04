@@ -35,7 +35,7 @@ namespace HiveKeeper.Views
             if (isValid)
             {
                 App.IsUserLoggedIn = true;
-                Navigation.InsertPageBefore(new MainPage(), this);
+                Navigation.InsertPageBefore(new LeftNavPage(), this);
                 await Navigation.PopAsync();
             }
             else
