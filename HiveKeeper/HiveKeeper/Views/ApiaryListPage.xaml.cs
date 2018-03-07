@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HiveKeeper.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,25 @@ namespace HiveKeeper.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+
+        public IEnumerable<Apiary> Apiaries
+        {
+            get
+            {
+                return new List<Apiary>
+                {
+                    new Apiary
+                    {
+                        Name = "Backyard",
+                        HostName = "Zohrab Broyan",
+                        HostPhone = "(818) 424-8561",
+                        HostEmail = "zohrab.broyan@gmail.com"                        
+                    }
+                };
+            }
+
+        }
+
+    }
 }
