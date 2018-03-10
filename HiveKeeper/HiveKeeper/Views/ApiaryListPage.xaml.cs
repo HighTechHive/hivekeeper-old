@@ -16,26 +16,17 @@ namespace HiveKeeper.Views
 		public ApiaryListPage ()
 		{
 			InitializeComponent ();
-		}
 
-
-        public IEnumerable<Apiary> Apiaries
-        {
-            get
+            ApiaryView.ItemsSource = new List<Apiary>
             {
-                return new List<Apiary>
-                {
-                    new Apiary
-                    {
-                        Name = "Backyard",
-                        HostName = "Zohrab Broyan",
-                        HostPhone = "(818) 424-8561",
-                        HostEmail = "zohrab.broyan@gmail.com"                        
-                    }
-                };
-            }
+                new Apiary{ Name = "Blah", HostName = "Bla Bla Bla"},
+                new Apiary{ Name = "skdhasj", HostName=" dasda" }
+            };
 
         }
+
+
+        
 
     }
 }

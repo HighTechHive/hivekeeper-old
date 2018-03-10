@@ -5,11 +5,13 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ApiaryView" 
-                      ItemsSource="{Binding Apiaries}">
+
+            <Label Text="List will be here" />
+
+            <ListView x:Name="ApiaryView"  >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" />
+                        <TextCell Text="{Binding Name}" Detail="{Binding HostName}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
