@@ -10,7 +10,8 @@
 
             <Label Text="List will be here" />
 
-            <ListView x:Name="ApiaryView"  >
+            <ListView x:Name="ApiaryView" 
+                      ItemsSource="{Binding Apiaries}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}" Detail="{Binding HostName}" />

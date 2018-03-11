@@ -6,6 +6,8 @@ namespace HiveKeeper.Models
 {
     public class Apiary
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string HostName { get; set; }

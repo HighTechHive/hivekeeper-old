@@ -1,36 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
+using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 using HiveKeeper.Models;
 using HiveKeeper.Views;
 using HiveKeeper.Services;
+using System.Diagnostics;
 
 namespace HiveKeeper.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class ApiariesViewModel : BaseViewModel
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<Apiary> DataStore => DependencyService.Get<IDataStore<Apiary>>() ?? new MockApiaryStore();
 
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<Apiary> Apiaries { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
+        public ApiariesViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Apiaries = new ObservableCollection<Apiary>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewApiaryPage, Apiary>(this, "AddItem", async (obj, item) =>
             {
-                var _item = item as Item;
-                Items.Add(_item);
+                var _item = item as Apiary;
+                Apiaries.Add(_item);
                 await DataStore.AddItemAsync(_item);
             });
         }
+
 
         async Task ExecuteLoadItemsCommand()
         {
@@ -41,11 +43,11 @@ namespace HiveKeeper.ViewModels
 
             try
             {
-                Items.Clear();
+                Apiaries.Clear();
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    Apiaries.Add(item);
                 }
             }
             catch (Exception ex)
