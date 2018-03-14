@@ -21,7 +21,7 @@ namespace HiveKeeper.ViewModels
 
         public ApiariesViewModel()
         {
-            Title = "Browse";
+            Title = "Apiaries";
             Apiaries = new ObservableCollection<Apiary>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

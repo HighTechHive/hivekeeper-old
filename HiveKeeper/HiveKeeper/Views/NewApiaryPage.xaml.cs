@@ -1,4 +1,5 @@
 ﻿using HiveKeeper.Models;
+using HiveKeeper.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,19 @@ namespace HiveKeeper.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewApiaryPage : ContentPage
 	{
-        public Apiary Apiary { get; set; }
-        
-		public NewApiaryPage ()
+        private NewApiaryViewModel viewModel;
+
+        public NewApiaryPage ()
 		{
 			InitializeComponent ();
 
-            Apiary = new Apiary
-            {
-                Name = "Apiary Name",
-                HostName = "Host Name"
-            };
-
-            BindingContext = this;
+            BindingContext = viewModel = new NewApiaryViewModel();
         }
+               
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Apiary);
+            MessagingCenter.Send(this, "AddItem", viewModel.Apiary);
             await Navigation.PopModalAsync();
         }
 

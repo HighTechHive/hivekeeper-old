@@ -11,10 +11,12 @@
             <Label Text="List will be here" />
 
             <ListView x:Name="ApiaryView" 
-                      ItemsSource="{Binding Apiaries}">
+                      ItemsSource="{Binding Apiaries}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" Detail="{Binding HostName}" />
+                        <TextCell Text="{Binding Name}" Detail="{Binding Address.FullAddress}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -7,11 +7,20 @@
         <ToolbarItem Text="Save" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Apiary.Name}" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Apiary.HostName}" FontSize="Small" Margin="0" />
-        </StackLayout>
+        <ScrollView >
+            <StackLayout Spacing="20" Padding="15" VerticalOptions="FillAndExpand" >
+           
+                <Entry Text="{Binding Apiary.Name}" FontSize="Medium" Placeholder="Name" />                
+                <Entry Text="{Binding Apiary.Address.Address1}" FontSize="Medium" Margin="0" Placeholder="Address1" />
+                <Entry Text="{Binding Apiary.Address.Address2}" FontSize="Medium" Margin="0" Placeholder="Address2" />
+                <Entry Text="{Binding Apiary.Address.City}" FontSize="Medium" Margin="0" Placeholder="City" />
+
+                <Picker Title="Select a State" ItemsSource="{Binding States}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedState}" />
+
+                <Entry Text="{Binding Apiary.Address.Zip}" FontSize="Medium" Margin="0" Placeholder="Zip" />
+
+                <Picker Title="Select a Country" ItemsSource="{Binding Countries}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedCountry}"  />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

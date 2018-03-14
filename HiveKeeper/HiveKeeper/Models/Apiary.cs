@@ -6,9 +6,16 @@ namespace HiveKeeper.Models
 {
     public class Apiary
     {
+        public Apiary()
+        {
+            Address = new Address();
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public Address Address { get; set; }
 
         public string HostName { get; set; }
 
