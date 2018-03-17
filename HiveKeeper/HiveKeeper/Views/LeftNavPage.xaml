@@ -4,7 +4,7 @@
              x:Class="HiveKeeper.Views.LeftNavPage"
              xmlns:pages="clr-namespace:HiveKeeper.Views">
   <MasterDetailPage.Master>
-    <pages:LeftNavPageMaster x:Name="MasterPage" />
+    <pages:LeftNavPageMaster x:Name="MasterPage"/>
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
     <NavigationPage>

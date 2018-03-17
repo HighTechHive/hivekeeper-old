@@ -26,7 +26,10 @@ namespace HiveKeeper.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", viewModel.Apiary);
+            // indicates wheter this is a newly apiary or edited/modified one
+            bool isNew = true;
+            // todo: don't send the object apiary here.. instead, just send an event and let the viewmodel collect and create the apiary object
+            MessagingCenter.Send<NewApiaryPage, bool>(this, Messages.APIARY_SAVED, isNew);
             await Navigation.PopModalAsync();
         }
 

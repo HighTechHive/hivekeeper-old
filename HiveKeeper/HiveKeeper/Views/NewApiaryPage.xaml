@@ -10,16 +10,16 @@
         <ScrollView >
             <StackLayout Spacing="20" Padding="15" VerticalOptions="FillAndExpand" >
            
-                <Entry Text="{Binding Apiary.Name}" FontSize="Medium" Placeholder="Name" />                
-                <Entry Text="{Binding Apiary.Address.Address1}" FontSize="Medium" Margin="0" Placeholder="Address1" />
-                <Entry Text="{Binding Apiary.Address.Address2}" FontSize="Medium" Margin="0" Placeholder="Address2" />
-                <Entry Text="{Binding Apiary.Address.City}" FontSize="Medium" Margin="0" Placeholder="City" />
+                <Entry Text="{Binding Name}" FontSize="Medium" Placeholder="Name" />                
+                <Entry Text="{Binding Address.Address1}" FontSize="Medium" Margin="0" Placeholder="Address1" />
+                <Entry Text="{Binding Address.Address2}" FontSize="Medium" Margin="0" Placeholder="Address2" />
+                <Entry Text="{Binding Address.City}" FontSize="Medium" Margin="0" Placeholder="City" />
 
-                <Picker Title="Select a State" ItemsSource="{Binding States}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedState}" />
+                <Picker Title="Select a State" ItemsSource="{Binding AvailableStates}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedState}" />
 
-                <Entry Text="{Binding Apiary.Address.Zip}" FontSize="Medium" Margin="0" Placeholder="Zip" />
+                <Entry Text="{Binding Address.Zip}" FontSize="Medium" Margin="0" Placeholder="Zip" />
 
-                <Picker Title="Select a Country" ItemsSource="{Binding Countries}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedCountry}"  />
+                <Picker Title="Select a Country" ItemsSource="{Binding AvailableCountries}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedCountry}"  />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

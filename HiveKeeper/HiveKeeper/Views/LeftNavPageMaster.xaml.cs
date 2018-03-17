@@ -33,7 +33,7 @@ namespace HiveKeeper.Views
             {
                 MenuItems = new ObservableCollection<LeftNavPageMenuItem>(new[]
                 {
-                    new LeftNavPageMenuItem { Id = 0, Title = "My Apiaries", TargetType= typeof(ApiaryListPage) },
+                    new LeftNavPageMenuItem { Id = 0, Title = "My Apiaries"/*, TargetType= typeof(ApiaryListPage)*/ },
                     new LeftNavPageMenuItem { Id = 1, Title = "Map", TargetType = typeof(ItemsPage) },
                     new LeftNavPageMenuItem { Id = 2, Title = "Reminders" },
                     new LeftNavPageMenuItem { Id = 3, Title = "Reports" },

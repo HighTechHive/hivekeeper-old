@@ -4,16 +4,16 @@
              x:Class="HiveKeeper.Views.ApiaryListPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="Add2" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="Add3" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-
-            <Label Text="List will be here" />
-
             <ListView x:Name="ApiaryView" 
                       ItemsSource="{Binding Apiaries}"
                       VerticalOptions="FillAndExpand"
-                      HasUnevenRows="true">
+                      HasUnevenRows="true"
+                      ItemSelected="ApiaryView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Name}" Detail="{Binding Address.FullAddress}" />

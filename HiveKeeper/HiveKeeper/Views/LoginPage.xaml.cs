@@ -20,7 +20,7 @@ namespace HiveKeeper.Views
 		{
 			InitializeComponent ();
 
-            BindingContext = viewModel = new LoginViewModel();
+            BindingContext = viewModel = new LoginViewModel();            
         }
 
         async void OnLoginButtonClicked(object sender, EventArgs e)
@@ -35,8 +35,12 @@ namespace HiveKeeper.Views
             if (isValid)
             {
                 App.IsUserLoggedIn = true;
-                Navigation.InsertPageBefore(new LeftNavPage(), this);
-                await Navigation.PopAsync();
+
+                MessagingCenter.Send<LoginPage>(this, Messages.USER_LOGGED_IN);
+
+                //App.MainPage = new NavigationPage(new LeftNavPage());
+                //Navigation.InsertPageBefore(new LeftNavPage(), this);
+                //await Navigation.PopAsync();
             }
             else
             {

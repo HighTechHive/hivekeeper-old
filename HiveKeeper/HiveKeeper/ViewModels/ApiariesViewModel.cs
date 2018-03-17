@@ -25,16 +25,16 @@ namespace HiveKeeper.ViewModels
             Apiaries = new ObservableCollection<Apiary>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewApiaryPage, Apiary>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewApiaryViewModel, Apiary>(this, Messages.APIARY_SAVED, async (sender, obj) =>
             {
-                var _item = item as Apiary;
+                var _item = obj as Apiary;
                 Apiaries.Add(_item);
                 await DataStore.AddItemAsync(_item);
             });
         }
 
-
-        async Task ExecuteLoadItemsCommand()
+       
+        private async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
                 return;

@@ -37,5 +37,16 @@ namespace HiveKeeper.Views
                 viewModel.LoadItemsCommand.Execute(null);
         }
 
+        private async void ApiaryView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as Apiary;
+            if (item == null)
+                return;
+
+            await Navigation.PushAsync(new ApiaryDetailsPage(new ApiaryDetailsViewModel(item)));
+
+            // Manually deselect item.
+            ApiaryView.SelectedItem = null;
+        }
     }
 }

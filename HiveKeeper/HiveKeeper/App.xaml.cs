@@ -1,5 +1,5 @@
 ﻿using System;
-
+using HiveKeeper.ViewModels;
 using HiveKeeper.Views;
 using Xamarin.Forms;
 
@@ -19,8 +19,13 @@ namespace HiveKeeper
             }
             else
             {
-                MainPage = new NavigationPage(new LeftNavPage());
+                MainPage = new LeftNavPage();
             }
+
+            MessagingCenter.Subscribe<LoginPage>(this, Messages.USER_LOGGED_IN, async (sender) =>
+            {
+                MainPage = new LeftNavPage();
+            });
         }
 
 		protected override void OnStart ()
@@ -37,5 +42,7 @@ namespace HiveKeeper
 		{
 			// Handle when your app resumes
 		}
+
+
 	}
 }

@@ -1,7 +1,9 @@
 ﻿using HiveKeeper.Models;
+using HiveKeeper.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace HiveKeeper.ViewModels
 {
@@ -9,16 +11,15 @@ namespace HiveKeeper.ViewModels
     {
         public NewApiaryViewModel()
         {
-            Apiary = new Apiary
+            
+            MessagingCenter.Subscribe<NewApiaryPage, bool>(this, Messages.APIARY_SAVED, async (sender, isNew) =>
             {
-                Name = "Apiary Name",
-                HostName = "Host Name"
-            };
-        }
+                var _item = GetApiaryModel();
+                MessagingCenter.Send<NewApiaryViewModel, Apiary>(this, Messages.APIARY_SAVED, _item);
+            });           
+        }        
 
-        public Apiary Apiary { get; set; }
-
-        public List<State> States
+        public List<State> AvailableStates
         {
             get
             {
@@ -40,7 +41,7 @@ namespace HiveKeeper.ViewModels
             }
         }
 
-        public List<Country> Countries
+        public List<Country> AvailableCountries
         {
             get
             {
@@ -60,6 +61,58 @@ namespace HiveKeeper.ViewModels
                 _selectedCountry = value;
                 // raise property changed event
             }
+        }
+
+        
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Address1 { get; set; }
+
+        public string Address2 { get; set; }
+
+        public string City { get; set; }
+
+        
+
+        public string Zip { get; set; }
+
+       
+
+        public string HostName { get; set; }
+
+        public string HostPhone { get; set; }
+
+        public string HostEmail { get; set; }
+
+        public string GateCode { get; set; }
+
+
+        private Apiary GetApiaryModel()
+        {
+            return new Apiary
+            {
+                Id = Id,
+                Name = Name,
+                HostName = HostName,
+                Address = new Address
+                {
+                    Address1 = Address1,
+                    Address2 = Address2,
+                    City = City,
+
+                    //todo: use stateId
+                    State = SelectedState.Abbreviation,
+                    Zip = Zip,
+
+                    //todo: use countryId
+                    Country = SelectedCountry.Abbreviation
+                },
+                HostPhone = HostPhone,
+                HostEmail = HostEmail,
+                GateCode = GateCode
+            };
         }
     }
 }

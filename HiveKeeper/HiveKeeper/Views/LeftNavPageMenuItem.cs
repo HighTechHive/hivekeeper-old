@@ -11,7 +11,7 @@ namespace HiveKeeper.Views
     {
         public LeftNavPageMenuItem()
         {
-            TargetType = typeof(LeftNavPageDetail);
+            TargetType = typeof(ApiaryListPage);
         }
         public int Id { get; set; }
         public string Title { get; set; }

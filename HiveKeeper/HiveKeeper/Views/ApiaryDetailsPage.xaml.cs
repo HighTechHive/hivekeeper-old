@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HiveKeeper.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace HiveKeeper.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ApiaryDetailsPage : ContentPage
 	{
-		public ApiaryDetailsPage ()
+		public ApiaryDetailsPage (ApiaryDetailsViewModel viewModel)
 		{
 			InitializeComponent ();
 		}
