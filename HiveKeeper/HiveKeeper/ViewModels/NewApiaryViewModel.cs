@@ -72,13 +72,9 @@ namespace HiveKeeper.ViewModels
 
         public string Address2 { get; set; }
 
-        public string City { get; set; }
+        public string City { get; set; }        
 
-        
-
-        public string Zip { get; set; }
-
-       
+        public string Zip { get; set; }       
 
         public string HostName { get; set; }
 

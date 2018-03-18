@@ -12,5 +12,7 @@ namespace HiveKeeper.ViewModels
             Title = item?.Text;
             Item = item;
         }
+       
+        
     }
 }

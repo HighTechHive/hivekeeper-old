@@ -8,5 +8,6 @@ namespace HiveKeeper.ViewModels
     {
         public static string APIARY_SAVED = "apiary_saved";
         public static string USER_LOGGED_IN = "user_loggedin";
+        public static string HIVE_ADDED = "hive_added";
     }
 }

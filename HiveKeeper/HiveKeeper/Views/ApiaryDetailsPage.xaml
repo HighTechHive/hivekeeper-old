@@ -2,11 +2,45 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HiveKeeper.Views.ApiaryDetailsPage">
-    <ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete"  />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>       
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Label Text="Name" FontSize="Small" />
+                <Label Text="{Binding Apiary.Name}" FontSize="Medium" />
+
+                <Label Text="Address1" FontSize="Small"/>
+                <Label Text="{Binding Apiary.Address.Address1}" FontSize="Medium" />
+            
+                <Label Text="Address2" FontSize="Small"/>
+                <Label Text="{Binding Apiary.Address.Address2}" FontSize="Medium" />
+
+                <Label Text="City" FontSize="Small"/>
+                <Entry Text="{Binding Apiary.Address.City}" FontSize="Medium" />
+
+                <Label Text="State" FontSize="Small"/>
+                <Label Text="{Binding Apiary.Address.State}" />
+
+                <Label Text="Zip" FontSize="Small"/>
+                <Label Text="{Binding Apiary.Address.Zip}" FontSize="Medium"  />
+
+                <Label Text="Country" FontSize="Small"/>
+                <Label Text="{Binding Apiary.Address.Country}"   />
+            </StackLayout>
+
+            <StackLayout>
+                <!--map of the apiary-->
+                <Label Text="map goes here..."/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Hive list goes here..."/>
+                <Button Text="Add Hive" x:Name="AddHive" Clicked="AddHive_Clicked"/>
+            </StackLayout>
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

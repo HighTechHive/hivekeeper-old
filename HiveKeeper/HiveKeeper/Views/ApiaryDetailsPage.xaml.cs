@@ -13,9 +13,18 @@ namespace HiveKeeper.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ApiaryDetailsPage : ContentPage
 	{
-		public ApiaryDetailsPage (ApiaryDetailsViewModel viewModel)
+        ApiaryDetailsViewModel viewModel;
+
+        public ApiaryDetailsPage (ApiaryDetailsViewModel viewModel)
 		{
 			InitializeComponent ();
+
+            BindingContext = viewModel;
 		}
-	}
+
+        async private void AddHive_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new HiveAddNewPage()));
+        }
+    }
 }
