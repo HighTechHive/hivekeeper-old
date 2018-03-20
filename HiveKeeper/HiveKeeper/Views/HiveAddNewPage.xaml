@@ -7,9 +7,20 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <!-- Hive configuration -->
+            <Entry Placeholder="Name" Text="{Binding Name}" />
+            <Entry Placeholder="Hive type (Lang, Ware, AZ, top Bar, etc...)" Text="{Binding Name}" />
+            
+            <Entry Placeholder="Number of Deep Boxes" Text="{Binding Name}" />
+            <Entry Placeholder="Number of honey Supers" Text="{Binding Name}" />
+            <Entry Placeholder="Number of Frames" Text="{Binding Name}" />
+
+            <!-- Initial status  -->
+            <Entry Placeholder="Queen Status" Text="{Binding Name}" />
+            <Entry Placeholder="Estimate of population" Text="{Binding Name}" />
+            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
