@@ -39,7 +39,20 @@
                 <Label Text="Hive list goes here..."/>
                 <Button Text="Add Hive" x:Name="AddHive" Clicked="AddHive_Clicked"/>
             </StackLayout>
-            
+
+            <StackLayout>
+                <ListView x:Name="HiveListView" 
+                      ItemsSource="{Binding Hives}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="true"
+                      >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" Detail="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
             
         </StackLayout>
     </ContentPage.Content>
