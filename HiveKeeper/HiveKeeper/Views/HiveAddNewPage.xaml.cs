@@ -13,10 +13,13 @@ namespace HiveKeeper.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class HiveAddNewPage : ContentPage
 	{
-		public HiveAddNewPage ()
+        HiveNewViewModel viewModel;
+        public HiveAddNewPage ()
 		{
 			InitializeComponent ();
-		}
+
+            BindingContext = viewModel = new HiveNewViewModel();
+        }
 
         async private void Save_Clicked(object sender, EventArgs e)
         {
