@@ -5,55 +5,57 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Delete"  />
     </ContentPage.ToolbarItems>
-    <ContentPage.Content>       
-        <StackLayout>
+    <ContentPage.Content>
+        <ScrollView >
             <StackLayout>
-                <Label Text="Name" FontSize="Small" />
-                <Label Text="{Binding Apiary.Name}" FontSize="Medium" />
+                <StackLayout>
+                    <Label Text="Name" FontSize="Small" />
+                    <Label Text="{Binding Apiary.Name}" FontSize="Medium" />
 
-                <Label Text="Address1" FontSize="Small"/>
-                <Label Text="{Binding Apiary.Address.Address1}" FontSize="Medium" />
-            
-                <Label Text="Address2" FontSize="Small"/>
-                <Label Text="{Binding Apiary.Address.Address2}" FontSize="Medium" />
+                    <Label Text="Address1" FontSize="Small"/>
+                    <Label Text="{Binding Apiary.Address.Address1}" FontSize="Medium" />
 
-                <Label Text="City" FontSize="Small"/>
-                <Entry Text="{Binding Apiary.Address.City}" FontSize="Medium" />
+                    <Label Text="Address2" FontSize="Small"/>
+                    <Label Text="{Binding Apiary.Address.Address2}" FontSize="Medium" />
 
-                <Label Text="State" FontSize="Small"/>
-                <Label Text="{Binding Apiary.Address.State}" />
+                    <Label Text="City" FontSize="Small"/>
+                    <Entry Text="{Binding Apiary.Address.City}" FontSize="Medium" />
 
-                <Label Text="Zip" FontSize="Small"/>
-                <Label Text="{Binding Apiary.Address.Zip}" FontSize="Medium"  />
+                    <Label Text="State" FontSize="Small"/>
+                    <Label Text="{Binding Apiary.Address.State}" />
 
-                <Label Text="Country" FontSize="Small"/>
-                <Label Text="{Binding Apiary.Address.Country}"   />
-            </StackLayout>
+                    <Label Text="Zip" FontSize="Small"/>
+                    <Label Text="{Binding Apiary.Address.Zip}" FontSize="Medium"  />
 
-            <StackLayout>
-                <!--map of the apiary-->
-                <Label Text="map goes here..."/>
-            </StackLayout>
+                    <Label Text="Country" FontSize="Small"/>
+                    <Label Text="{Binding Apiary.Address.Country}"   />
+                </StackLayout>
 
-            <StackLayout>
-                <Label Text="Hive list goes here..."/>
-                <Button Text="Add Hive" x:Name="AddHive" Clicked="AddHive_Clicked"/>
-            </StackLayout>
+                <StackLayout>
+                    <!--map of the apiary-->
+                    <Label Text="map goes here..."/>
+                </StackLayout>
 
-            <StackLayout>
-                <ListView x:Name="HiveListView" 
+                <StackLayout>
+                    <Label Text="Hive list goes here..."/>
+                    <Button Text="Add Hive" x:Name="AddHive" Clicked="AddHive_Clicked"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <ListView x:Name="HiveListView" 
                       ItemsSource="{Binding Hives}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="true"
                       >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextCell Text="{Binding Name}" Detail="{Binding Name}" />
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Name}" Detail="{Binding Name}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
             </StackLayout>
-            
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
