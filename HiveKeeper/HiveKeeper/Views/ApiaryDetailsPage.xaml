@@ -46,6 +46,7 @@
                       ItemsSource="{Binding Hives}"
                       VerticalOptions="FillAndExpand"
                       HasUnevenRows="true"
+                      ItemSelected="HiveListView_ItemSelected"
                       >
                         <ListView.ItemTemplate>
                             <DataTemplate>

@@ -1,4 +1,5 @@
-﻿using HiveKeeper.ViewModels;
+﻿using HiveKeeper.Models;
+using HiveKeeper.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,18 @@ namespace HiveKeeper.Views
 
             if (_viewModel.Hives.Count == 0)
                 _viewModel.LoadHivesCommand.Execute(null);
+        }
+
+        private async void HiveListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as Hive;
+            if (item == null)
+                return;
+
+            await Navigation.PushAsync(new HiveDetailsPage());
+
+            // Manually deselect item.
+            HiveListView.SelectedItem = null;
         }
     }
 }

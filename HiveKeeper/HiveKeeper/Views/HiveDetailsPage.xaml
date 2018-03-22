@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HiveKeeper.Views.HiveDetailsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete"  />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Hive configuration -->
+            <Label Text="Name" />
+            <Label Text="{Binding Name}" />
+            
+            <Label Text="Hive type (Lang, Ware, AZ, top Bar, etc...)"  />
+            <Label Text="{Binding Name}" />
+
+            <Label Text="Number of Deep Boxes" />
+            
+            <Label Text="Number of honey Supers"  />
+            
+            
+            <Label Text="Number of Frames" />
+
+            <!-- Initial status  -->
+            <Label Text="Queen Status"  />
+            
+            <Label Text="Estimate of population" />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
