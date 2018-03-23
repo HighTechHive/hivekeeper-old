@@ -8,6 +8,6 @@ namespace HiveKeeper.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int NumBroodBoxes { get; set; }
+        public HiveType HiveType { get; set; }
     }
 }

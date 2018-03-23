@@ -19,7 +19,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Apiary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Country.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Hive.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\HiveType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LangstrothHiveConfiguration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\State.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
