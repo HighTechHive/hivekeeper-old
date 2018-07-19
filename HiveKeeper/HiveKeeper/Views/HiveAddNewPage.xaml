@@ -11,6 +11,7 @@
             <!-- Hive configuration -->
             <Entry Placeholder="Name" Text="{Binding Name}" />
             <Entry Placeholder="Hive type (Lang, Ware, AZ, top Bar, etc...)" Text="{Binding Name}" />
+            <Picker Title="Select Hive Type" ItemsSource="{Binding AvailableHiveTypes}" ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedHiveType}" />
             
             <Entry Placeholder="Number of Deep Boxes" Text="{Binding Name}" />
             <Entry Placeholder="Number of honey Supers" Text="{Binding Name}" />

@@ -4,12 +4,10 @@ using System.Text;
 
 namespace HiveKeeper.Models
 {
-    public enum HiveType
+    public class HiveType
     {
-        Langstroth = 1,
-        Warre = 2,
-        TopBar = 3,
-        FlowHive = 4,
-
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string SystemName { get; set; }
     }
 }

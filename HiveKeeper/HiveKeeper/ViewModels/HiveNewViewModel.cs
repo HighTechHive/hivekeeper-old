@@ -18,6 +18,33 @@ namespace HiveKeeper.ViewModels
             });
         }
 
+        
+        public List<HiveType> AvailableHiveTypes
+        {
+            get
+            { 
+                // replace with a service/moq call
+                return new List<HiveType>
+                {
+                    new HiveType { Name = "Langstroth", Id = 1},
+                    new HiveType{ Name = "Warre", Id = 2},
+                    new HiveType { Name = "TopBar", Id = 3 },
+                    new HiveType { Name = "FlowHive", Id = 4 }
+                };
+            }
+        }
+
+        private State _selectedHiveType;
+        public State SelectedHiveType
+        {
+            get { return _selectedHiveType; }
+            set
+            {
+                _selectedHiveType = value;
+                // todo: raise property changed event here
+            }
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }
