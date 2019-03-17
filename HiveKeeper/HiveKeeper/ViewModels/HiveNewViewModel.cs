@@ -22,6 +22,21 @@ namespace HiveKeeper.ViewModels
 
         public string Name { get; set; }
 
+        public List<HiveType> AvailableHiveTypes
+        {
+
+            get
+            {
+                return new List<HiveType>
+                {
+                    new HiveType{ Id = 1, Name = "Langstroth"},
+                    new HiveType{ Id = 2, Name = "Warre"}
+                };
+            }
+        }
+
+        public HiveType SelectedHiveType { get; set; }
+
         private Hive GetHiveModel()
         {
             return new Hive
