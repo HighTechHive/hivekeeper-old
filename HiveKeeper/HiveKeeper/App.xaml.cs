@@ -11,7 +11,12 @@ namespace HiveKeeper
 
         public App ()
 		{
-			InitializeComponent();
+            // Initialize Live Reload.
+#if DEBUG
+            LiveReload.Init();
+#endif
+
+            InitializeComponent();
 
             if (!IsUserLoggedIn)
             {

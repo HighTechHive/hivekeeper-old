@@ -10,7 +10,7 @@
         <ScrollView >
             <StackLayout>
                 <StackLayout>
-                    <Label Text="Name" FontSize="Small" />
+                    <Label Text="Name" FontSize="Large" />
                     <Label Text="{Binding Apiary.Name}" FontSize="Medium" />
 
                     <Label Text="Address1" FontSize="Small"/>

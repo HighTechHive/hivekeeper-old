@@ -15,6 +15,12 @@ namespace HiveKeeper.Views
 	public partial class ApiaryDetailsPage : ContentPage
 	{
         ApiaryDetailsViewModel _viewModel;
+
+        public ApiaryDetailsPage()
+        {
+                       
+        }
+
         public ApiaryDetailsPage (ApiaryDetailsViewModel viewModel)
 		{
 			InitializeComponent ();
